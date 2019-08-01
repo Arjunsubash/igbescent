@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<head>
+<title>ADD PORTFOLIO</title>
+<style>
+.center{
+text-align:center;
+}
+</style>
+</head>
+<body>
+
+        <form action="" method="POST" enctype="multipart/form-data">
+        {%csrf_token%}
+       
+                  {{logo_form.name}}
+                  
+                  {{logo_form.description_logo}}
+                  
+                  {{logo_form.photo}}
+                  <!-- <input type="file" name= "imagefile"> -->
+                  <input type="submit" value="save">
+    
+    </form>
+
+<!-- <table align="center">
+<tr><th>image</th><th>Description</th></tr>
+<tr>{% for i in logo_data %}<td><img src="{{i.photo.url}}" width="200" height="210"></td><td>{{i.description_logo}}</td></tr>{% endfor %}
+</table> -->
+
+</body>
+</html> 
