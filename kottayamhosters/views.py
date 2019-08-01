@@ -56,10 +56,10 @@ def Home(request):
         printart_dis = Add_printart.objects.all()
         return render(request,'Home.html',{'form':form, 'logo_dis':logo_dis, 'video_dis':video_dis, 'design_dis':design_dis, 'printart_dis':printart_dis})
 
-@login_required(login_url='/kottayamhosters/')
+@login_required(login_url='/ignescent/')
 def dev_home(request):
     return render(request,'add_home.html')
-@login_required(login_url='/kottayamhosters/')    
+@login_required(login_url='/ignescent/')    
 def add_logo(request):
     if request.method == "POST":
         form = Logo_data(request.POST,request.FILES) 
@@ -74,7 +74,7 @@ def add_logo(request):
         logo_form = Logo_data()    
         logo_data = Add_logo.objects.all()
         return render(request,'logodesign.html',{'logo_form':logo_form, 'logo_data' : logo_data})
-@login_required(login_url='/kottayamhosters/')
+@login_required(login_url='/ignescent/')
 def add_video(request):
     if request.method == "POST":
         video_form = video_data(request.POST,request.FILES) 
@@ -84,7 +84,7 @@ def add_video(request):
     else:
         video_form = video_data()
         return render(request,'videoedit.html',{'video_form':video_form})
-@login_required(login_url='/kottayamhosters/')
+@login_required(login_url='/ignescent/')
 def add_design(request):
     if request.method == "POST":
         design_form = design_data(request.POST,request.FILES) 
@@ -93,7 +93,7 @@ def add_design(request):
             return  redirect('devhome')
     design_form = design_data()
     return render(request,'webdesign.html',{'design_form':design_form})
-@login_required(login_url='/kottayamhosters/')
+@login_required(login_url='/ignescent/')
 def add_printart(request):
     if request.method == "POST":
         printart_form = printart_data(request.POST,request.FILES) 
